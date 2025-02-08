@@ -1,0 +1,14 @@
+*************************First Come First Serve(FCFS)********************************
+Chenar upay: Arrival Time(AT), Burst Time(BT) deya thakbe.
+Jokhon ekta process CPU te asbe tokhon sei process tai age execute hobe, er age CPU onno kono process k execute korbena...ekta process execute howar por j process CPU te asbe tokhon sei process tokhon sei process ta abar execute hobe...Eta Arrival Time(AT) er asscending order follow korbe.
+
+
+*************************Shortest Job First********************************
+It is of two types:
+    • Non-Pre-emptive: Shudhu Burst Time(BT) deya thakbe...Arrival Time(AT) deya thakbe na, thakleo sob values same or zero(0). 
+    Process: Burst Time(BT) sort korte hobe. same as FCFS.
+
+    • Pre-emptive: Arrival Time(AT), Burst Time(BT) deya thakbe... 
+    Process: Jar Arrival time kom, se age ready queue te asbe, then 1ms execute hobe, & oi process er Burst time(BT) 1ms kombe, then dekhbe ei exetution time er majhe kono process arrive korce kina, jodi arrive kore sei process ta tokhoon ready queue te asbe, then abaro 1ms execute hobe, & oi process er  Burst time(BT) 1ms kombe, then dekhbe ei exetution time er majhe kono process arrive korce kina, jodi arrive kore sei process ta tokhon ready queue te asbe, ei vabe 1ms kore barbe r Burst time(BT) 1ms kombe, jotokkhon na porjonto sob process ready queue te asbe, then sob asar por burst time jog kore execute hobe...
+
+
