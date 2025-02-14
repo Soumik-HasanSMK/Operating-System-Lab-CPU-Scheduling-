@@ -10,9 +10,21 @@ struct process
 };
 
 vector<process> processes;
-bool compare(process p1, process p2)
+bool comparePri(process p1, process p2)
 {
+    if (p1.priority == p2.priority)
+    {
+        return p1.at < p2.at;
+    }
     return p1.priority < p2.priority;
+}
+bool compareAT(process p1, process p2)
+{
+    if (p1.at == p2.at)
+    {
+        return p1.priority < p2.priority;
+    }
+    return p1.at < p2.at;
 }
 
 void inputView()
@@ -39,18 +51,10 @@ int main()
     cout << "\nInput view\n\n";
     inputView();
 
-    for (int i = 0; i < n; i++)
-    {
-        if (mn > processes[i].at)
-        {
-            mn = processes[i].at;
-            processes[0].p = processes[i].p;
-            processes[0].at = processes[i].at;
-            processes[0].bt = processes[i].bt;
-            processes[0].priority = processes[i].priority;
-        }
-    }
-    sort(processes.begin() + 1, processes.end(), compare);
+    // sorting by arrival time for first index.
+    sort(processes.begin(), processes.end(), compareAT);
+    // sorting by priority for other indices.
+    sort(processes.begin() + 1, processes.end(), comparePri);
 
     // calculations
     processes[0].ct = processes[0].at + processes[0].bt;
